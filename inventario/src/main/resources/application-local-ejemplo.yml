@@ -1,0 +1,8 @@
+server:
+  port: 8080 # Puedes cambiar el puerto si es necesario
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/inventario_db?useSSL=false&serverTimezone=America/Lima
+    username: ejemplo_usuario
+    password: ejemplo_contraseña
