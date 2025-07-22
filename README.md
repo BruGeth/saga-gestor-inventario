@@ -2,6 +2,46 @@
 
 Aplicación fullstack desarrollada íntegramente en Spring Boot con Thymeleaf para la gestión de inventario, zonas y logística en Saga Falabella.
 
+## Estructura de Carpetas
+
+```
+inventario/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── sagafalabella/
+│   │   │           └── inventario/
+│   │   │               ├── config/
+│   │   │               ├── controller/
+│   │   │               ├── dto/
+│   │   │               ├── exception/
+│   │   │               ├── model/
+│   │   │               ├── repository/
+│   │   │               ├── service/
+│   │   │               │   └──impl/
+│   │   │               ├── util/
+│   │   │               └── InventarioApplication.java
+│   │   └── resources/
+│   │       ├── static/
+│   │       │   ├── css/
+│   │       │   ├── js/
+│   │       │   └── img/
+│   │       ├── templates/
+│   │       │   └── (los archivos .html de Thymeleaf)
+│   │       ├── application.yml
+│   │       ├── application-local.yml
+│   │       └── application-local-ejemplo.yml
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── sagafalabella/
+│                   └── inventario/
+│                       └── (tests)
+├── pom.xml
+└── README.md
+```
+
 ## Configuración de la aplicación
 
 Este proyecto utiliza archivos de configuración por perfiles para facilitar el desarrollo y la personalización local.
@@ -43,6 +83,7 @@ Puedes definir variables de entorno para personalizar el puerto y la conexión a
 - Spring Boot Starter Web
 - Spring Boot Starter Data JPA
 - Spring Boot Starter Security
+- Spring Boot Starter Thymeleaf
 - Spring Boot DevTools
 - MySQL Connector/J
 - Lombok
