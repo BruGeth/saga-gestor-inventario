@@ -38,4 +38,15 @@ Puedes definir variables de entorno para personalizar el puerto y la conexión a
 - `DB_USERNAME`
 - `DB_PASSWORD`
 
+## Dependencias principales
+
+- Spring Boot Starter Web
+- Spring Boot Starter Data JPA
+- Spring Boot Starter Security
+- Spring Boot DevTools
+- MySQL Connector/J
+- Lombok
+- Spring Boot Starter Test
+- Spring Security Test
+
 ---
