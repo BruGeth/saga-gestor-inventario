@@ -2,6 +2,7 @@ package com.sagafalabella.inventario.service.impl;
 
 import com.sagafalabella.inventario.dto.StockPorZonaDTO;
 import com.sagafalabella.inventario.model.Producto;
+import com.sagafalabella.inventario.repository.ProductoRepository;
 import com.sagafalabella.inventario.service.ReporteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
