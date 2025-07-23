@@ -1,42 +1,43 @@
 "use client"
 import "./Sidebar.css"
+import { LayoutDashboard, Package, MapPin, ArrowRightLeft, FileText, Warehouse } from "lucide-react"
 
 function Sidebar({ currentPage, onPageChange, userRole }) {
   const menuItems = [
     {
       id: "dashboard",
       label: "Dashboard",
-      icon: "dashboard-icon",
+      icon: LayoutDashboard,
       roles: ["ADMINISTRADOR", "SUPERVISOR", "ASISTENTE_LOGISTICA"],
     },
     {
       id: "inventory",
       label: "Inventario",
-      icon: "warehouse-icon",
+      icon: Warehouse,
       roles: ["ADMINISTRADOR", "SUPERVISOR", "ASISTENTE_LOGISTICA"],
     },
     {
       id: "products",
       label: "Productos",
-      icon: "package-icon",
+      icon: Package,
       roles: ["ADMINISTRADOR", "SUPERVISOR"],
     },
     {
       id: "zones",
       label: "Zonas",
-      icon: "map-pin-icon",
+      icon: MapPin,
       roles: ["ADMINISTRADOR", "SUPERVISOR"],
     },
     {
       id: "transfers",
       label: "Transferencias",
-      icon: "transfer-icon",
+      icon: ArrowRightLeft,
       roles: ["ADMINISTRADOR", "SUPERVISOR", "ASISTENTE_LOGISTICA"],
     },
     {
       id: "reports",
       label: "Reportes",
-      icon: "file-text-icon",
+      icon: FileText,
       roles: ["ADMINISTRADOR", "SUPERVISOR"],
     },
   ]
@@ -47,7 +48,7 @@ function Sidebar({ currentPage, onPageChange, userRole }) {
     <div className="sidebar">
       <div className="sidebar-header">
         <div className="sidebar-logo">
-          <i className="warehouse-icon"></i>
+          <Warehouse size={24} />
         </div>
         <div className="sidebar-title">
           <h2>Saga Falabella</h2>
@@ -62,7 +63,7 @@ function Sidebar({ currentPage, onPageChange, userRole }) {
             onClick={() => onPageChange(item.id)}
             className={`sidebar-nav-item ${currentPage === item.id ? "active" : ""}`}
           >
-            <i className={item.icon}></i>
+            <item.icon size={20} />
             <span>{item.label}</span>
           </button>
         ))}

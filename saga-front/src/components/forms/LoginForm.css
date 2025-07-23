@@ -123,15 +123,10 @@
   margin-top: 0.25rem;
 }
 
-/* Icons */
-.icon-user::before {
-  content: "👤";
-}
-
-.icon-lock::before {
-  content: "🔒";
-}
-
-.icon-building::before {
-  content: "🏢";
+.input-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
 }
