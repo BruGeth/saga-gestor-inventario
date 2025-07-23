@@ -1,6 +1,12 @@
+"use client"
+
+import { useState } from "react"
+import { Search, Filter, Plus, Edit, Eye, Package, AlertTriangle } from "lucide-react"
 import "./ProductManagement.css"
 
 function ProductManagement({ userRole }) {
+  const [searchTerm, setSearchTerm] = useState("")
+
   // Datos simulados de productos
   const productos = [
     {
@@ -39,7 +45,33 @@ function ProductManagement({ userRole }) {
       zona: "Zona D - Deportes",
       estado: "ACTIVO",
     },
+    {
+      id: 4,
+      codigo: "7501234567893",
+      nombre: "Laptop HP Pavilion 15",
+      marca: "HP",
+      tipo: "ELECTRONICO",
+      precio: 2199.99,
+      stock: 3,
+      stockMinimo: 8,
+      zona: "Zona A - Electrónicos",
+      estado: "ACTIVO",
+    },
   ]
+
+  const getStockStatus = (stock, minimo) => {
+    if (stock <= minimo) {
+      return { label: "Stock Bajo", variant: "critical", icon: AlertTriangle }
+    }
+    return { label: "Normal", variant: "normal", icon: Package }
+  }
+
+  const filteredProducts = productos.filter(
+    (producto) =>
+      producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      producto.codigo.includes(searchTerm) ||
+      producto.marca.toLowerCase().includes(searchTerm.toLowerCase()),
+  )
 
   return (
     <div className="product-management">
@@ -50,15 +82,7 @@ function ProductManagement({ userRole }) {
         </div>
         {userRole === "ADMINISTRADOR" && (
           <button className="add-button">
-            <svg
-              className="button-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
+            <Plus size={16} />
             Nuevo Producto
           </button>
         )}
@@ -66,25 +90,22 @@ function ProductManagement({ userRole }) {
 
       {/* Filtros y búsqueda */}
       <div className="search-card">
-        <div className="search-container">
-          <div className="search-input-container">
-            <svg
-              className="search-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        <div className="search-content">
+          <div className="search-container">
+            <div className="search-input-container">
+              <Search className="search-icon" size={16} />
+              <input
+                placeholder="Buscar por nombre, código o marca..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-input"
               />
-            </svg>
-            <input placeholder="Buscar por nombre, código o marca..." className="search-input" />
+            </div>
           </div>
-          <button className="filter-button">Filtros</button>
+          <button className="filter-button">
+            <Filter size={16} />
+            Filtros
+          </button>
         </div>
       </div>
 
@@ -92,60 +113,104 @@ function ProductManagement({ userRole }) {
       <div className="products-card">
         <div className="card-header">
           <h3 className="card-title">Catálogo de Productos</h3>
-          <p className="card-description">{productos.length} productos encontrados</p>
+          <p className="card-description">{filteredProducts.length} productos encontrados</p>
         </div>
         <div className="card-content">
-          <div className="products-table">
-            <div className="table-header">
-              <div className="table-cell">Código</div>
-              <div className="table-cell">Producto</div>
-              <div className="table-cell">Marca</div>
-              <div className="table-cell">Precio</div>
-              <div className="table-cell">Stock</div>
-              <div className="table-cell">Zona</div>
-              <div className="table-cell">Acciones</div>
-            </div>
-            {productos.map((producto) => (
-              <div key={producto.id} className="table-row">
-                <div className="table-cell code-cell">{producto.codigo}</div>
-                <div className="table-cell">
-                  <div className="product-name">{producto.nombre}</div>
-                </div>
-                <div className="table-cell">{producto.marca}</div>
-                <div className="table-cell">S/ {producto.precio.toFixed(2)}</div>
-                <div className="table-cell">
-                  <div className="stock-container">
-                    <span className={producto.stock <= producto.stockMinimo ? "stock-low" : ""}>{producto.stock}</span>
-                    {producto.stock <= producto.stockMinimo && (
-                      <span className="stock-badge critical">
-                        <svg
-                          className="badge-icon"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"
-                          />
-                        </svg>
-                        Stock Bajo
-                      </span>
-                    )}
+          <div className="table-container">
+            <table className="products-table">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Producto</th>
+                  <th>Marca</th>
+                  <th>Tipo</th>
+                  <th>Precio</th>
+                  <th>Stock</th>
+                  <th>Zona</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredProducts.map((producto) => {
+                  const stockStatus = getStockStatus(producto.stock, producto.stockMinimo)
+                  const StatusIcon = stockStatus.icon
+
+                  return (
+                    <tr key={producto.id}>
+                      <td className="code-cell">{producto.codigo}</td>
+                      <td>
+                        <div className="product-name">{producto.nombre}</div>
+                      </td>
+                      <td>{producto.marca}</td>
+                      <td>
+                        <span className="type-badge">{producto.tipo}</span>
+                      </td>
+                      <td>S/ {producto.precio.toFixed(2)}</td>
+                      <td>
+                        <div className="stock-cell">
+                          <span className={producto.stock <= producto.stockMinimo ? "stock-low" : ""}>
+                            {producto.stock}
+                          </span>
+                          <span className={`stock-badge ${stockStatus.variant}`}>
+                            <StatusIcon size={12} />
+                            {stockStatus.label}
+                          </span>
+                        </div>
+                      </td>
+                      <td className="zone-cell">{producto.zona}</td>
+                      <td>
+                        <span className="status-badge">{producto.estado}</span>
+                      </td>
+                      <td>
+                        <div className="actions-cell">
+                          <button className="action-button">
+                            <Eye size={16} />
+                          </button>
+                          {userRole === "ADMINISTRADOR" && (
+                            <button className="action-button">
+                              <Edit size={16} />
+                            </button>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      {/* Resumen de productos con stock bajo */}
+      <div className="critical-stock-card">
+        <div className="card-header">
+          <h3 className="card-title">
+            <AlertTriangle className="title-icon" size={20} />
+            Productos con Stock Crítico
+          </h3>
+          <p className="card-description">Productos que requieren reposición inmediata</p>
+        </div>
+        <div className="card-content">
+          <div className="critical-products-grid">
+            {filteredProducts
+              .filter((p) => p.stock <= p.stockMinimo)
+              .map((producto) => (
+                <div key={producto.id} className="critical-product-card">
+                  <div className="critical-product-header">
+                    <h4 className="critical-product-name">{producto.nombre}</h4>
+                    <span className="critical-badge">Crítico</span>
+                  </div>
+                  <div className="critical-product-details">
+                    <p>
+                      Stock actual: <span className="stock-critical">{producto.stock}</span>
+                    </p>
+                    <p>Stock mínimo: {producto.stockMinimo}</p>
+                    <p>Zona: {producto.zona}</p>
                   </div>
                 </div>
-                <div className="table-cell zone-cell">{producto.zona}</div>
-                <div className="table-cell">
-                  <div className="action-buttons">
-                    <button className="action-button">Ver</button>
-                    {userRole === "ADMINISTRADOR" && <button className="action-button">Editar</button>}
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>

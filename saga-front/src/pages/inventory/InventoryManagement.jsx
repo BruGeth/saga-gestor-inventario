@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import "./InventoryManagement.css"
+import { Scan, Package, AlertTriangle, CheckCircle, Search, Plus } from "lucide-react"
 
 function InventoryManagement({ userRole }) {
   const [activeTab, setActiveTab] = useState("ingreso")
@@ -78,7 +79,7 @@ function InventoryManagement({ userRole }) {
                 <div className="inventory-card">
                   <div className="card-header">
                     <h3 className="card-title">
-                      <i className="scan-icon"></i>
+                      <Scan size={16} />
                       Escáner de Radiofrecuencia
                     </h3>
                     <p className="card-description">Escanee el código de barras del producto</p>
@@ -95,7 +96,7 @@ function InventoryManagement({ userRole }) {
                           className="code-input"
                         />
                         <button onClick={handleScan} disabled={!scannerInput} className="scan-button">
-                          <i className="scan-icon"></i>
+                          <Scan size={16} />
                         </button>
                       </div>
                     </div>
@@ -103,7 +104,7 @@ function InventoryManagement({ userRole }) {
                     {productData && (
                       <div className="product-found">
                         <div className="product-found-header">
-                          <i className="check-icon"></i>
+                          <CheckCircle size={16} />
                           <span>Producto Encontrado</span>
                         </div>
                         <div className="product-found-details">
@@ -132,7 +133,7 @@ function InventoryManagement({ userRole }) {
                 <div className="inventory-card">
                   <div className="card-header">
                     <h3 className="card-title">
-                      <i className="package-icon"></i>
+                      <Package size={16} />
                       Registro de Ingreso
                     </h3>
                     <p className="card-description">Complete los datos del ingreso</p>
@@ -181,7 +182,7 @@ function InventoryManagement({ userRole }) {
                       className="register-button"
                       disabled={!productData || !selectedZone}
                     >
-                      <i className="plus-icon"></i>
+                      <Plus size={16} />
                       Registrar Ingreso
                     </button>
                   </div>
@@ -196,7 +197,7 @@ function InventoryManagement({ userRole }) {
               <div className="inventory-card">
                 <div className="card-header">
                   <h3 className="card-title">
-                    <i className="search-icon"></i>
+                    <Search size={16} />
                     Consulta de Stock por Zona
                   </h3>
                   <p className="card-description">Consulte el inventario disponible por zonas</p>
@@ -225,7 +226,7 @@ function InventoryManagement({ userRole }) {
               <div className="inventory-card">
                 <div className="card-header">
                   <h3 className="card-title">
-                    <i className="alert-icon red"></i>
+                    <AlertTriangle className="alert-icon" size={16} />
                     Clasificación de Productos Dañados
                   </h3>
                   <p className="card-description">Registre y clasifique productos dañados según Clase 0 o Clase 100</p>
