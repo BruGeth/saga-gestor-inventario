@@ -122,11 +122,3 @@
 .test-users-list p {
   margin-top: 0.25rem;
 }
-
-.input-icon {
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #a0aec0;
-}
