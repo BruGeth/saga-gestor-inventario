@@ -1,4 +1,5 @@
 import "./Dashboard.css"
+import { Package, AlertTriangle, TrendingUp, MapPin, ArrowUp } from "lucide-react"
 
 function Dashboard({ userRole }) {
   // Datos simulados
@@ -27,12 +28,12 @@ function Dashboard({ userRole }) {
         <div className="metric-card">
           <div className="metric-header">
             <h3 className="metric-title">Total Productos</h3>
-            <i className="package-icon"></i>
+            <Package className="package-icon" size={20} color="#cccccc" />
           </div>
           <div className="metric-content">
             <div className="metric-value">4,850</div>
             <p className="metric-trend positive">
-              <i className="arrow-up-icon"></i>
+            <ArrowUp className="arrow-up-icon" size={14} color="#aad63e" style={{ marginRight: 4 }} />
               +12% desde ayer
             </p>
           </div>
@@ -41,7 +42,7 @@ function Dashboard({ userRole }) {
         <div className="metric-card">
           <div className="metric-header">
             <h3 className="metric-title">Stock Bajo</h3>
-            <i className="alert-icon yellow"></i>
+            <AlertTriangle className="alert-icon" size={20} color="#eab308" />
           </div>
           <div className="metric-content">
             <div className="metric-value yellow">23</div>
@@ -52,7 +53,7 @@ function Dashboard({ userRole }) {
         <div className="metric-card">
           <div className="metric-header">
             <h3 className="metric-title">Productos Dañados</h3>
-            <i className="alert-icon red"></i>
+            <AlertTriangle className="alert-icon" size={20} color="#dc2626" />
           </div>
           <div className="metric-content">
             <div className="metric-value red">8</div>
@@ -66,7 +67,7 @@ function Dashboard({ userRole }) {
         <div className="metric-card">
           <div className="metric-header">
             <h3 className="metric-title">Transferencias Hoy</h3>
-            <i className="trending-icon"></i>
+            <TrendingUp className="trending-icon" size={20} color="#cccccc" />
           </div>
           <div className="metric-content">
             <div className="metric-value">156</div>
@@ -83,7 +84,7 @@ function Dashboard({ userRole }) {
         <div className="dashboard-card">
           <div className="card-header">
             <h2 className="card-title">
-              <i className="map-pin-icon"></i>
+              <MapPin className="map-pin-icon" size={20} color="#aad63e" style={{ marginRight: 8 }} />
               Stock por Zonas (Plan Z)
             </h2>
             <p className="card-description">Ocupación actual del almacén por zonas</p>
@@ -115,7 +116,7 @@ function Dashboard({ userRole }) {
         <div className="dashboard-card">
           <div className="card-header">
             <h2 className="card-title">
-              <i className="alert-icon yellow"></i>
+              <AlertTriangle className="alert-icon" size={20} color="#eab308" style={{ marginRight: 8 }} />
               Productos con Stock Bajo
             </h2>
             <p className="card-description">Productos que requieren reposición urgente</p>
@@ -145,7 +146,7 @@ function Dashboard({ userRole }) {
         <div className="dashboard-card full-width">
           <div className="card-header">
             <h2 className="card-title">
-              <i className="alert-icon red"></i>
+              <AlertTriangle className="alert-icon" size={20} color="#dc2626" style={{ marginRight: 8 }} />
               Productos Dañados Recientes
             </h2>
             <p className="card-description">Últimos productos clasificados como dañados</p>
