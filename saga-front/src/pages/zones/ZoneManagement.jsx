@@ -1,3 +1,4 @@
+import { MapPin, Package, TrendingUp, AlertTriangle, Settings, BarChart3 } from "lucide-react"
 import "./ZoneManagement.css"
 
 function ZoneManagement({ userRole }) {
@@ -71,49 +72,21 @@ function ZoneManagement({ userRole }) {
         </div>
         {userRole === "ADMINISTRADOR" && (
           <button className="config-button">
-            <svg
-              className="button-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-              />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+            <Settings size={16} />
             Configurar Zonas
           </button>
         )}
       </div>
 
       {/* Resumen general */}
-      <div className="summary-metrics">
+      <div className="summary-grid">
         <div className="summary-card">
           <div className="summary-content">
             <div className="summary-info">
               <p className="summary-label">Total Zonas</p>
               <p className="summary-value">4</p>
             </div>
-            <svg
-              className="summary-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+            <MapPin className="summary-icon" size={32} />
           </div>
         </div>
 
@@ -123,20 +96,7 @@ function ZoneManagement({ userRole }) {
               <p className="summary-label">Total Productos</p>
               <p className="summary-value">1,525</p>
             </div>
-            <svg
-              className="summary-icon green"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-              />
-            </svg>
+            <Package className="summary-icon green" size={32} />
           </div>
         </div>
 
@@ -146,15 +106,7 @@ function ZoneManagement({ userRole }) {
               <p className="summary-label">Valor Total</p>
               <p className="summary-value">S/ 4.3M</p>
             </div>
-            <svg
-              className="summary-icon green"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
+            <TrendingUp className="summary-icon green" size={32} />
           </div>
         </div>
 
@@ -164,20 +116,7 @@ function ZoneManagement({ userRole }) {
               <p className="summary-label">Ocupación Promedio</p>
               <p className="summary-value">84%</p>
             </div>
-            <svg
-              className="summary-icon green"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-              />
-            </svg>
+            <BarChart3 className="summary-icon green" size={32} />
           </div>
         </div>
       </div>
@@ -193,26 +132,7 @@ function ZoneManagement({ userRole }) {
               <div className="zone-header">
                 <div className="zone-title-section">
                   <h3 className="zone-title">
-                    <svg
-                      className="zone-icon"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
+                    <MapPin size={20} />
                     {zona.nombre}
                   </h3>
                   <p className="zone-subtitle">
@@ -241,7 +161,7 @@ function ZoneManagement({ userRole }) {
                 </div>
 
                 {/* Métricas */}
-                <div className="zone-metrics">
+                <div className="metrics-section">
                   <div className="metric-item">
                     <p className="metric-label">Productos</p>
                     <p className="metric-value">{zona.productos}</p>
@@ -256,21 +176,8 @@ function ZoneManagement({ userRole }) {
                 {zona.alertas.length > 0 && (
                   <div className="alerts-section">
                     <div className="alerts-header">
-                      <svg
-                        className="alert-icon"
-                        fill="none"
-                        stroke="var(--falabella-orange)"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"
-                        />
-                      </svg>
-                      <span className="alerts-title">Alertas</span>
+                      <AlertTriangle className="alert-icon" size={16} />
+                      <span>Alertas</span>
                     </div>
                     <div className="alerts-list">
                       {zona.alertas.map((alerta, index) => (
@@ -283,14 +190,14 @@ function ZoneManagement({ userRole }) {
                 )}
 
                 {/* Última actualización */}
-                <div className="update-info">
+                <div className="update-section">
                   <p className="update-text">Última actualización: {zona.ultimaActualizacion}</p>
                 </div>
 
                 {/* Acciones */}
-                <div className="zone-actions">
-                  <button className="zone-action-btn">Ver Productos</button>
-                  {userRole === "ADMINISTRADOR" && <button className="zone-action-btn">Configurar</button>}
+                <div className="actions-section">
+                  <button className="action-button">Ver Productos</button>
+                  {userRole === "ADMINISTRADOR" && <button className="action-button">Configurar</button>}
                 </div>
               </div>
             </div>
@@ -308,20 +215,20 @@ function ZoneManagement({ userRole }) {
         </div>
         <div className="card-content">
           <div className="plan-z-grid">
-            <div className="plan-z-item">
-              <h4 className="plan-z-title green">Zona A - Electrónicos</h4>
+            <div className="plan-z-item green">
+              <h4 className="plan-z-title">Zona A - Electrónicos</h4>
               <p className="plan-z-description">Productos tecnológicos, celulares, computadoras, electrodomésticos</p>
             </div>
-            <div className="plan-z-item">
-              <h4 className="plan-z-title orange">Zona B - Textil</h4>
+            <div className="plan-z-item orange">
+              <h4 className="plan-z-title">Zona B - Textil</h4>
               <p className="plan-z-description">Ropa, calzado, accesorios de moda para todas las edades</p>
             </div>
-            <div className="plan-z-item">
-              <h4 className="plan-z-title purple">Zona C - Hogar</h4>
+            <div className="plan-z-item purple">
+              <h4 className="plan-z-title">Zona C - Hogar</h4>
               <p className="plan-z-description">Muebles, decoración, artículos para el hogar y cocina</p>
             </div>
-            <div className="plan-z-item">
-              <h4 className="plan-z-title blue">Zona D - Deportes</h4>
+            <div className="plan-z-item blue">
+              <h4 className="plan-z-title">Zona D - Deportes</h4>
               <p className="plan-z-description">Equipamiento deportivo, ropa deportiva, accesorios fitness</p>
             </div>
           </div>

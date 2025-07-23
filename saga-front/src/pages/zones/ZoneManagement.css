@@ -8,7 +8,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .page-title {
@@ -38,19 +37,20 @@
   background-color: #9ac235;
 }
 
-.button-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.summary-metrics {
+.summary-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .summary-metrics {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .summary-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -59,10 +59,10 @@
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
 }
 
 .summary-content {
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,8 +80,6 @@
 }
 
 .summary-icon {
-  width: 2rem;
-  height: 2rem;
   color: #6b7280;
 }
 
@@ -119,14 +117,9 @@
 .zone-title {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-}
-
-.zone-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-right: 0.5rem;
 }
 
 .zone-subtitle {
@@ -143,8 +136,8 @@
 }
 
 .zone-status-badge.normal {
-  background-color: var(--falabella-gray-light);
-  color: #1f2937;
+  background-color: #f3f4f6;
+  color: #374151;
 }
 
 .zone-status-badge.warning {
@@ -196,16 +189,17 @@
   color: #6b7280;
 }
 
-.zone-metrics {
+.metrics-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--falabella-gray-light);
+  border-top: 1px solid #e5e7eb;
 }
 
 .metric-item {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .metric-label {
@@ -220,7 +214,7 @@
 
 .alerts-section {
   padding-top: 1rem;
-  border-top: 1px solid var(--falabella-gray-light);
+  border-top: 1px solid #e5e7eb;
 }
 
 .alerts-header {
@@ -228,16 +222,12 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .alert-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.alerts-title {
-  font-size: 0.875rem;
-  font-weight: 500;
+  color: var(--falabella-orange);
 }
 
 .alerts-list {
@@ -254,9 +244,9 @@
   border-radius: 0.25rem;
 }
 
-.update-info {
+.update-section {
   padding-top: 1rem;
-  border-top: 1px solid var(--falabella-gray-light);
+  border-top: 1px solid #e5e7eb;
 }
 
 .update-text {
@@ -264,24 +254,24 @@
   color: #6b7280;
 }
 
-.zone-actions {
+.actions-section {
   display: flex;
   gap: 0.5rem;
   padding-top: 0.5rem;
 }
 
-.zone-action-btn {
+.action-button {
   flex: 1;
   padding: 0.5rem;
-  background-color: white;
+  background-color: transparent;
   border: 1px solid var(--falabella-gray-medium);
   border-radius: 0.375rem;
   font-size: 0.875rem;
   cursor: pointer;
 }
 
-.zone-action-btn:hover {
-  background-color: var(--falabella-gray-light);
+.action-button:hover {
+  background-color: #f3f4f6;
 }
 
 .plan-z-card {
@@ -334,25 +324,25 @@
   border-radius: 0.5rem;
 }
 
-.plan-z-title {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.plan-z-title.green {
+.plan-z-item.green .plan-z-title {
   color: var(--falabella-green);
 }
 
-.plan-z-title.orange {
+.plan-z-item.orange .plan-z-title {
   color: var(--falabella-orange);
 }
 
-.plan-z-title.purple {
-  color: #9333ea;
+.plan-z-item.purple .plan-z-title {
+  color: #7c3aed;
 }
 
-.plan-z-title.blue {
+.plan-z-item.blue .plan-z-title {
   color: #2563eb;
+}
+
+.plan-z-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .plan-z-description {

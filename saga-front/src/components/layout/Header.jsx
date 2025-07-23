@@ -1,5 +1,6 @@
 "use client"
 import "./Header.css"
+import { Bell, LogOut } from "lucide-react"
 
 function Header({ user, onLogout }) {
   const getRoleBadgeColor = (role) => {
@@ -32,7 +33,7 @@ function Header({ user, onLogout }) {
 
         <div className="header-actions">
           <button className="header-notification-btn">
-            <i className="bell-icon"></i>
+            <Bell size={20} />
           </button>
 
           <div className="header-user">
@@ -47,7 +48,7 @@ function Header({ user, onLogout }) {
               {user.apellido[0]}
             </div>
             <button className="header-logout-btn" onClick={onLogout}>
-              <i className="logout-icon"></i>
+              <LogOut size={20} />
             </button>
           </div>
         </div>
