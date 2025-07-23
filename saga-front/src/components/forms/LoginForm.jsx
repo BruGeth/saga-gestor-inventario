@@ -1,6 +1,5 @@
-"use client"
-
 import { useState } from "react"
+import { Building2, User, Lock } from "lucide-react"
 import "./LoginForm.css"
 
 function LoginForm({ onLogin }) {
@@ -34,7 +33,9 @@ function LoginForm({ onLogin }) {
       <div className="login-card">
         <div className="login-header">
           <div className="login-logo">
-            <i className="icon-building"></i>
+            <span style={{ backgroundColor: "var(--falabella-green)", padding: "0.75rem", borderRadius: "50%" }}>
+              <Building2 color="white" size={32} />
+            </span>
           </div>
           <h2 className="login-title">Sistema de Inventario</h2>
           <p className="login-subtitle">Saga Falabella - Mallplaza Comas</p>
@@ -44,7 +45,7 @@ function LoginForm({ onLogin }) {
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <div className="input-with-icon">
-                <i className="icon-user"></i>
+                <User style={{ position: "absolute", left: "0.75rem", top: "0.75rem", color: "#a0aec0" }} size={20} />
                 <input
                   id="email"
                   type="email"
@@ -52,13 +53,14 @@ function LoginForm({ onLogin }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  style={{ paddingLeft: "2.5rem" }}
                 />
               </div>
             </div>
             <div className="form-group">
               <label htmlFor="password">Contraseña</label>
               <div className="input-with-icon">
-                <i className="icon-lock"></i>
+                <Lock style={{ position: "absolute", left: "0.75rem", top: "0.75rem", color: "#a0aec0" }} size={20} />
                 <input
                   id="password"
                   type="password"
@@ -66,6 +68,7 @@ function LoginForm({ onLogin }) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  style={{ paddingLeft: "2.5rem" }}
                 />
               </div>
             </div>
