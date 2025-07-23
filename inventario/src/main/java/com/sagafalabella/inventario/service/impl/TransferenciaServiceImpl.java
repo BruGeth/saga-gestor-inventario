@@ -5,6 +5,7 @@ import com.sagafalabella.inventario.enums.EstadoTransferencia;
 import com.sagafalabella.inventario.model.Producto;
 import com.sagafalabella.inventario.model.Transferencia;
 import com.sagafalabella.inventario.model.Usuario;
+import com.sagafalabella.inventario.repository.ProductoRepository;
 import com.sagafalabella.inventario.repository.TransferenciaRepository;
 import com.sagafalabella.inventario.repository.UsuarioRepository;
 import com.sagafalabella.inventario.service.TransferenciaService;
