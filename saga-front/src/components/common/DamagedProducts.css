@@ -1,0 +1,127 @@
+.damaged-products {
+  padding: 24px;
+}
+
+.damaged-products-header {
+  margin-bottom: 20px;
+}
+
+.damaged-products-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+.damaged-products-subtitle {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+}
+
+.damaged-products-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.damaged-product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+}
+
+.damaged-product-info {
+  flex: 1;
+}
+
+.damaged-product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.damaged-product-date {
+  font-size: 12px;
+  color: #666666;
+}
+
+.damaged-product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.damaged-product-clase {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.damaged-product-quantity {
+  font-size: 11px;
+  color: #666666;
+}
+
+.damaged-product-cost {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.damaged-products-info {
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.damage-class-info {
+  display: flex;
+  gap: 16px;
+}
+
+.damage-class-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #666666;
+}
+
+.damage-class-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .damaged-product-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .damaged-product-details {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .damage-class-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
