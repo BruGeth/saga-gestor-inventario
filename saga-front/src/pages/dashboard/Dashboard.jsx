@@ -27,33 +27,12 @@ function Dashboard({ userRole }) {
         <div className="metric-card">
           <div className="metric-header">
             <h3 className="metric-title">Total Productos</h3>
-            <svg
-              className="metric-icon"
-              fill="none"
-              stroke="#6b7280"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-              />
-            </svg>
+            <i className="package-icon"></i>
           </div>
           <div className="metric-content">
             <div className="metric-value">4,850</div>
             <p className="metric-trend positive">
-              <svg
-                className="trend-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
-              </svg>
+              <i className="arrow-up-icon"></i>
               +12% desde ayer
             </p>
           </div>
@@ -62,20 +41,7 @@ function Dashboard({ userRole }) {
         <div className="metric-card">
           <div className="metric-header">
             <h3 className="metric-title">Stock Bajo</h3>
-            <svg
-              className="metric-icon"
-              fill="none"
-              stroke="#eab308"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"
-              />
-            </svg>
+            <i className="alert-icon yellow"></i>
           </div>
           <div className="metric-content">
             <div className="metric-value yellow">23</div>
@@ -86,33 +52,12 @@ function Dashboard({ userRole }) {
         <div className="metric-card">
           <div className="metric-header">
             <h3 className="metric-title">Productos Dañados</h3>
-            <svg
-              className="metric-icon"
-              fill="none"
-              stroke="#dc2626"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"
-              />
-            </svg>
+            <i className="alert-icon red"></i>
           </div>
           <div className="metric-content">
             <div className="metric-value red">8</div>
             <p className="metric-trend negative">
-              <svg
-                className="trend-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
-              </svg>
+              <i className="arrow-up-icon"></i>
               +3 desde ayer
             </p>
           </div>
@@ -121,28 +66,12 @@ function Dashboard({ userRole }) {
         <div className="metric-card">
           <div className="metric-header">
             <h3 className="metric-title">Transferencias Hoy</h3>
-            <svg
-              className="metric-icon"
-              fill="none"
-              stroke="#6b7280"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
+            <i className="trending-icon"></i>
           </div>
           <div className="metric-content">
             <div className="metric-value">156</div>
             <p className="metric-trend positive">
-              <svg
-                className="trend-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11l5-5m0 0l5 5m-5-5v12" />
-              </svg>
+              <i className="arrow-up-icon"></i>
               +8% vs promedio
             </p>
           </div>
@@ -154,26 +83,7 @@ function Dashboard({ userRole }) {
         <div className="dashboard-card">
           <div className="card-header">
             <h2 className="card-title">
-              <svg
-                className="card-title-icon"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+              <i className="map-pin-icon"></i>
               Stock por Zonas (Plan Z)
             </h2>
             <p className="card-description">Ocupación actual del almacén por zonas</p>
@@ -205,20 +115,7 @@ function Dashboard({ userRole }) {
         <div className="dashboard-card">
           <div className="card-header">
             <h2 className="card-title">
-              <svg
-                className="card-title-icon"
-                fill="none"
-                stroke="#eab308"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"
-                />
-              </svg>
+              <i className="alert-icon yellow"></i>
               Productos con Stock Bajo
             </h2>
             <p className="card-description">Productos que requieren reposición urgente</p>
@@ -248,20 +145,7 @@ function Dashboard({ userRole }) {
         <div className="dashboard-card full-width">
           <div className="card-header">
             <h2 className="card-title">
-              <svg
-                className="card-title-icon"
-                fill="none"
-                stroke="#dc2626"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"
-                />
-              </svg>
+              <i className="alert-icon red"></i>
               Productos Dañados Recientes
             </h2>
             <p className="card-description">Últimos productos clasificados como dañados</p>

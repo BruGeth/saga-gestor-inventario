@@ -78,20 +78,7 @@ function InventoryManagement({ userRole }) {
                 <div className="inventory-card">
                   <div className="card-header">
                     <h3 className="card-title">
-                      <svg
-                        className="card-title-icon"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                      </svg>
+                      <i className="scan-icon"></i>
                       Escáner de Radiofrecuencia
                     </h3>
                     <p className="card-description">Escanee el código de barras del producto</p>
@@ -108,20 +95,7 @@ function InventoryManagement({ userRole }) {
                           className="code-input"
                         />
                         <button onClick={handleScan} disabled={!scannerInput} className="scan-button">
-                          <svg
-                            className="button-icon"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
-                          </svg>
+                          <i className="scan-icon"></i>
                         </button>
                       </div>
                     </div>
@@ -129,15 +103,7 @@ function InventoryManagement({ userRole }) {
                     {productData && (
                       <div className="product-found">
                         <div className="product-found-header">
-                          <svg
-                            className="check-icon"
-                            fill="none"
-                            stroke="var(--falabella-green)"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                          <i className="check-icon"></i>
                           <span>Producto Encontrado</span>
                         </div>
                         <div className="product-found-details">
@@ -166,20 +132,7 @@ function InventoryManagement({ userRole }) {
                 <div className="inventory-card">
                   <div className="card-header">
                     <h3 className="card-title">
-                      <svg
-                        className="card-title-icon"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                        />
-                      </svg>
+                      <i className="package-icon"></i>
                       Registro de Ingreso
                     </h3>
                     <p className="card-description">Complete los datos del ingreso</p>
@@ -228,20 +181,7 @@ function InventoryManagement({ userRole }) {
                       className="register-button"
                       disabled={!productData || !selectedZone}
                     >
-                      <svg
-                        className="button-icon"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                        />
-                      </svg>
+                      <i className="plus-icon"></i>
                       Registrar Ingreso
                     </button>
                   </div>
@@ -256,20 +196,7 @@ function InventoryManagement({ userRole }) {
               <div className="inventory-card">
                 <div className="card-header">
                   <h3 className="card-title">
-                    <svg
-                      className="card-title-icon"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      />
-                    </svg>
+                    <i className="search-icon"></i>
                     Consulta de Stock por Zona
                   </h3>
                   <p className="card-description">Consulte el inventario disponible por zonas</p>
@@ -298,20 +225,7 @@ function InventoryManagement({ userRole }) {
               <div className="inventory-card">
                 <div className="card-header">
                   <h3 className="card-title">
-                    <svg
-                      className="card-title-icon"
-                      fill="none"
-                      stroke="#dc2626"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"
-                      />
-                    </svg>
+                    <i className="alert-icon red"></i>
                     Clasificación de Productos Dañados
                   </h3>
                   <p className="card-description">Registre y clasifique productos dañados según Clase 0 o Clase 100</p>
